@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: managerticketsfront
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: managerticketsfront
+  template:
+    metadata:
+      labels:
+        app: managerticketsfront
+    spec:
+      containers:
+      - name: managerticketsfront
+        image: despossivel/managerticketsfront:TAG
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred

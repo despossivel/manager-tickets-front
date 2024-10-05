@@ -1,0 +1,8 @@
+services:
+  managerticketsfront:
+    container_name: managerticketsfront
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '83:80'
